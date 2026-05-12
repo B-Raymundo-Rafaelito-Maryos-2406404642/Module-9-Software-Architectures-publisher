@@ -6,8 +6,11 @@
 
     The URL "amqp://guest:guest@localhost:5672" is a connection string that specifies how to connect to the message broker (RabbitMQ in this case). It includes the protocol (amqp), the username (guest), the password (guest), the host (localhost), and the port (5672). This means that both the publisher and subscriber programs are connecting to the same RabbitMQ server using the same credentials and connection details.
 
-Screenshot:
+Screenshots:
 ![Screenshot of running RabbitMQ](assets/running_RabbitMQ_as_message_broker.png)
 
 ![Sending and processing event](assets/sending_and_processing_event.png)
 Here is what happens when I ran the publisher program: It sends five messages to the RabbitMQ server, each containing a `UserCreatedEventMessage` with a user ID and user name. The output shows that each message has been published successfully.
+
+![Monitoring chart based on publisher](assets/monitoring_chart_based_on_publisher.png)
+The spikes on the chart indicate the times when the publisher program sent messages to the RabbitMQ servera nd each spike corresponds to a batch of messages being published. The chart helps visualize the activity of the publisher and how it interacts with the message broker over time.
